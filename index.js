@@ -38,14 +38,6 @@ var shouldRestart = (a, b) => {
     } else if (a[k] !== b[k]) return true
   }
 }
-/*
-var shouldRestart = (a, b) => {
-  for (var k in { ...a, ...b }) {
-    if (typeof (isArray(b[k]) ? b[k][0] : b[k]) === "function") {
-    } else if (a[k] !== b[k]) return true
-  }
-}
-*/
 
 var patchSubs = (oldSubs, newSubs, dispatch) => {
   for (
