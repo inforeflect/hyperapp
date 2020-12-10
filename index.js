@@ -31,13 +31,21 @@ var createClass = (obj) => {
 
   return out
 }
-
+var shouldRestart = (a, b) => {
+  for (var k in { ...a, ...b }) {
+    if (typeof (isArray(a[k]) ? a[k][0] : a[k]) === "function") {
+      b[k] = a[k]
+    } else if (a[k] !== b[k]) return true
+  }
+}
+/*
 var shouldRestart = (a, b) => {
   for (var k in { ...a, ...b }) {
     if (typeof (isArray(b[k]) ? b[k][0] : b[k]) === "function") {
     } else if (a[k] !== b[k]) return true
   }
 }
+*/
 
 var patchSubs = (oldSubs, newSubs, dispatch) => {
   for (
